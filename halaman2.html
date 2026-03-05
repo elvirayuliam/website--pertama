@@ -6,7 +6,7 @@
 
 <body style="background: linear-gradient( pink, white ); text-align: center; font-family: Cambria;">
 
-    <h1>Ini Halaman Kedua 🌸</h1>
+    <h1>Ini Halaman Kedua mari kita eksplor 🌸</h1>
 
     <p>Kamu berhasil pindah halaman.</p>
 
@@ -18,16 +18,6 @@
 
 </body>
 </html>
-FORM F_SAVE_DATA .
-  DATA ls_tabel TYPE ZTSY_AR_PERFORM.
-
-  LOOP AT lt_disp INTO wa_disp.
-    DELETE FROM ZTSY_AR_PERFORM WHERE VBELN = wa_disp-VBELN AND KUNNR = wa_disp-KUNNR.
-
-    CLEAR ls_tabel.
-    MOVE-CORRESPONDING wa_disp TO ls_tabel.
-    ls_tabel-CREATE_DATE = SY-DATUM.
-    ls_tabel-CREATE_TIME = SY-UZEIT.
 
     INSERT ZTSY_AR_PERFORM FROM ls_tabel.
   ENDLOOP.
